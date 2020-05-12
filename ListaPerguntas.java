@@ -9,6 +9,8 @@ import java.sql.SQLException;
       Connection conn= null;
       PreparedStatement x= null;
       ResultSet resp= null; 
+      PreparedStatement x1= null;
+      ResultSet resp1= null; 
 
     
       String stmt="INSERT INTO Pergunta(pergunta_Pergunta,resposta_Pergunta,tema_Pergunta,id_Pergunta ) VALUES (?,?,?,?);";
@@ -16,6 +18,9 @@ import java.sql.SQLException;
       String stmt2="SELECT * FROM Pergunta WHERE tema_Pergunta = ?";
       String stmt3="SELECT * FROM Pergunta ";
       String stmt4="SELECT * FROM Pergunta WHERE tema_Pergunta = ? AND id_Pergunta = ?";
+      String stmt5="SELECT * FROM Temas";
+      String stmt6="INSERT INTO Temas(id_Tema) VALUES (?);";
+      String stmt7="SELECT * FROM Pergunta WHERE tema_Pergunta = ?";
       
       public void addPergunta(Pergunta question){
          String pergunta,resposta,tema,id;
@@ -25,8 +30,8 @@ import java.sql.SQLException;
          id= question.getId();
          
          try{
-         
            conn= conexao.abrirConnection();
+           
            x=conn.prepareStatement(stmt);
            x.setString(1, pergunta);
            x.setString(2, resposta);
@@ -35,6 +40,12 @@ import java.sql.SQLException;
            x.execute();
            x.close();
          
+           
+           x1=conn.prepareStatement(stmt6);
+           x1.setString(1, tema);
+           x1.execute();
+           x1.close();
+
            
          }catch(SQLException e){
            e.printStackTrace();
@@ -194,6 +205,129 @@ import java.sql.SQLException;
             }
          }
       }
+      
+      public int contarId(){
+         int w=0;  
+         try{
+         
+            conn= conexao.abrirConnection();
+            x=conn.prepareStatement(stmt5);
+            resp= x.executeQuery();
+            while (resp.next()) {
+               w++;          
+            }
+            x.close();   
+                 
+         }catch(SQLException e){
+            e.printStackTrace();
+         }finally{
+            try{
+               
+               if (conn != null){
+                  conn.close(); 
+               }
+               
+            }catch(SQLException t){
+               t.printStackTrace();
+            }
+            return w;
+         }
+      }
+
+      public void listarId(String vet[]){
+         int w=0;  
+         try{
+         
+            conn= conexao.abrirConnection();
+            x=conn.prepareStatement(stmt5);
+            resp= x.executeQuery();
+            while (resp.next()) {
+               vet[w]=resp.getString("id_Tema");
+               w++;          
+            }
+            x.close();   
+                 
+         }catch(SQLException e){
+            e.printStackTrace();
+         }finally{
+            try{
+               
+               if (conn != null){
+                  conn.close(); 
+               }
+               
+            }catch(SQLException t){
+               t.printStackTrace();
+            }
+         }
+      }
+      
+      
+      
+      
+      public int contarPerguntasTema(String tema){
+         int j=0;  
+         try{
+            
+            conn= conexao.abrirConnection();
+            x=conn.prepareStatement(stmt7);
+            x.setString(1, tema);
+            resp= x.executeQuery();
+            while (resp.next()) {
+               j++;      
+            }
+            x.close();
+            
+            
+   
+                 
+         }catch(SQLException e){
+            e.printStackTrace();
+            j=-1;
+         }finally{
+            try{
+               
+               if (conn != null){
+                  conn.close(); 
+               }
+               
+            }catch(SQLException t){
+               t.printStackTrace();
+            }
+         }
+         return j;
+      }
+   
+   
+      public void listarPerguntasTema(String vet[],String tema){
+         int w=0;  
+         try{
+         
+            conn= conexao.abrirConnection();
+            x=conn.prepareStatement(stmt7);
+            x.setString(1, tema);
+            resp= x.executeQuery();
+            while (resp.next()) {
+               vet[w]=resp.getString("id_Pergunta");
+               w++;          
+            }
+            x.close();   
+                 
+         }catch(SQLException e){
+            e.printStackTrace();
+         }finally{
+            try{
+               
+               if (conn != null){
+                  conn.close(); 
+               }
+               
+            }catch(SQLException t){
+               t.printStackTrace();
+            }
+         }
+      }
+
       
       
    

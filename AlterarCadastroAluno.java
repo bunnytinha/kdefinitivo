@@ -260,9 +260,12 @@ public class AlterarCadastroAluno extends JFrame implements ActionListener, Item
             
             conteudo= indicaAlunos();
             remove(container);
+            remove(bg);
             container = criaTabela();
+            container.setBounds(centroW-300,centroH+40,600,200);
+            bg.setBounds(0,0,telaW,telaH);
             add(container);
-            container.setBounds(centroW-300,centroH,600,200); 
+            add(bg);  
             repaint();
              
             
@@ -303,9 +306,12 @@ public class AlterarCadastroAluno extends JFrame implements ActionListener, Item
             alunos = (String) filtro.getSelectedItem();
             conteudo= indicaAlunos();
             remove(container);
+            remove(bg);
             container = criaTabela();
+            container.setBounds(centroW-300,centroH+40,600,200); 
+            bg.setBounds(0,0,telaW,telaH);
             add(container);
-            container.setBounds(centroW-300,centroH,600,200); 
+            add(bg); 
             repaint();
               
          }

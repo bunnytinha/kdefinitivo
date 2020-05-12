@@ -11,8 +11,12 @@ CREATE TABLE Pergunta(
 	id_Pergunta 		VARCHAR(15) 		PRIMARY KEY,
 	pergunta_Pergunta 	VARCHAR(150) 	NOT NULL			,
 	resposta_Pergunta 	VARCHAR(150) 					,
-	tema_Pergunta 		VARCHAR(100) 	NOT NULL			
+	tema_Pergunta 		VARCHAR(100) 	NOT NULL		
 );
+CREATE TABLE Temas(
+	id_Tema 		VARCHAR(15) PRIMARY KEY	
+);
+
 
 CREATE TABLE Professor(
 	matricula_Professor 	VARCHAR(15) 	PRIMARY KEY			,
@@ -69,6 +73,8 @@ SELECT * FROM Aluno;
 INSERT INTO Nota(valor_Nota, data_Teste, presenca_dia, fk_matricula_Aluno) VALUE (9,'07/05/2020','P','817633921');
 SELECT * FROM Nota;
 SELECT * FROM Pergunta;
+
+INSERT INTO Temas(id_Tema) VALUE ('matemática');
 
 
 

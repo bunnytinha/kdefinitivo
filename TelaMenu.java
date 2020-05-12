@@ -137,7 +137,7 @@ public class TelaMenu extends JFrame implements ActionListener{
             System.out.println("Tela Atividades");
          }
          else if(e.getSource() == dojo){
-            //new TelaDojo();
+            new AulaDojo();
             dispose();
             System.out.println("Tela Dojo");
          }

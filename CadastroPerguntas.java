@@ -251,10 +251,13 @@ public class CadastroPerguntas extends JFrame implements ActionListener{
             
              
             remove(container);
+            remove(bg);
             conteudo= indicaPerguntas();            
-            container = criaTabela();           
-            add(container);           
-            container.setBounds(centroW-300,centroH,600,200);             
+            container = criaTabela();                  
+            container.setBounds(centroW-300,centroH+130,600,200);
+            bg.setBounds(0,0,telaW,telaH);
+            add(container);
+            add(bg);             
             repaint(); 
             
             perguntaT.setText("");

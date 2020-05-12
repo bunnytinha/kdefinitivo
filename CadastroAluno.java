@@ -252,10 +252,14 @@ public class CadastroAluno extends JFrame implements ActionListener, ItemListene
             conteudo= indicaAlunos();
              
             remove(container);
+            remove(bg);
             conteudo= indicaAlunos();            
-            container = criaTabela();           
-            add(container);           
-            container.setBounds(centroW-300,centroH,600,200);             
+            container = criaTabela();                    
+            container.setBounds(centroW-300,centroH+40,600,200);
+            bg.setBounds(0,0,telaW,telaH);
+            add(container);
+            add(bg);
+            validate();            
             repaint();  
             
          }else if(c.getSource() == voltar){

@@ -41,13 +41,10 @@ public class TelaAtividades extends JFrame implements ActionListener{
    private JLabel lbalunos = new JLabel(ialunos);
    private ImageIcon iperguntas = new ImageIcon("C:/Dojo/Imagens/novasAtividades1.png");
    private JLabel lbperguntas = new JLabel(iperguntas);
-   //private ImageIcon idojo = new ImageIcon("C:/Dojo/Imagens/aulas1.png");
-   //private JLabel lbdojo = new JLabel(idojo);
    private ImageIcon ivoltar = new ImageIcon("C:/Dojo/Imagens/voltar1.png");
    private JLabel lbvoltar = new JLabel(ivoltar);
    private JButton novasAtividades = new JButton("Novas Atividades");
    private JButton atividades = new JButton("Atividades");
-   //private JButton registroAulas = new JButton("Aulas");
    private JButton voltar = new JButton("Voltar");
    private ImageIcon icon = new ImageIcon("C:/Dojo/Imagens/kimedachi200.png");//aqui coloca a URL da imagem
    private JLabel kimedachi = new JLabel(icon);//coloca a imagem em uma label
@@ -77,21 +74,17 @@ public class TelaAtividades extends JFrame implements ActionListener{
       lbalunos.setBounds(centroW-230,centroH-200,100,100);
       novasAtividades.setBounds(centroW-250,centroH-100,500,100);
       lbperguntas.setBounds(centroW-230,centroH-100,100,100);
-      //registroAulas.setBounds(centroW-250,centroH,500,100);
       voltar.setBounds(centroW-250,centroH+100,500,100);
       lbvoltar.setBounds(centroW-230,centroH+100,100,100);
-      //lbdojo.setBounds(centroW-230,centroH,100,100);
       bannerK.setBounds(-700,-400,telaW,telaH);
       bannerM.setBounds(+700,-400,telaW,telaH);
       
       //estio dos botoes
       atividades.setFont(new Font("BEBAS", Font.PLAIN, 42));
       novasAtividades.setFont(new Font("BEBAS", Font.PLAIN, 42));
-      //registroAulas.setFont(new Font("BEBAS", Font.PLAIN, 42));
       voltar.setFont(new Font("BEBAS", Font.PLAIN, 42));
       atividades.setForeground(Color.WHITE);
       novasAtividades.setForeground(Color.WHITE);
-      //registroAulas.setForeground(Color.WHITE);
       voltar.setForeground(Color.WHITE);
       atividades.setOpaque(false);
       atividades.setContentAreaFilled(false);
@@ -99,9 +92,6 @@ public class TelaAtividades extends JFrame implements ActionListener{
       novasAtividades.setOpaque(false);
       novasAtividades.setContentAreaFilled(false);
       novasAtividades.setBorderPainted(false);
-      //registroAulas.setOpaque(false);
-      //registroAulas.setContentAreaFilled(false);
-      //registroAulas.setBorderPainted(false);
       voltar.setOpaque(false);
       voltar.setContentAreaFilled(false);
       voltar.setBorderPainted(false);
@@ -109,7 +99,6 @@ public class TelaAtividades extends JFrame implements ActionListener{
       //coloca os botões pra fazerem algo quando apertados
       atividades.addActionListener(this); 
       novasAtividades.addActionListener(this);
-      //registroAulas.addActionListener(this);
       voltar.addActionListener(this);      
   
       //seta o estilo como nulo
@@ -120,8 +109,6 @@ public class TelaAtividades extends JFrame implements ActionListener{
       painelDeConteudo.add(lbalunos);
       painelDeConteudo.add(novasAtividades);
       painelDeConteudo.add(lbperguntas);
-      //painelDeConteudo.add(registroAulas);
-      //painelDeConteudo.add(lbdojo);
       painelDeConteudo.add(voltar);
       painelDeConteudo.add(lbvoltar);
       painelDeConteudo.add(bannerK);
@@ -149,11 +136,6 @@ public class TelaAtividades extends JFrame implements ActionListener{
             dispose();
             System.out.println("Novas Atividades");
          }
-         /*else if(e.getSource() == registroAulas){
-            //new RegistroAulas();
-            dispose();
-            System.out.println("Registro de Aulas");
-         }*/
          else if(e.getSource() == voltar){
             new TelaMenu();
             dispose();

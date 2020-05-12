@@ -3,6 +3,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ListaAlunos{
 
@@ -211,45 +212,20 @@ public class ListaAlunos{
    
    
    
-  public ArrayList listaSorteio(String turma){
-      ArrayList<String> nomes= new ArrayList<String>();  
-      try{
+  public Pilha listaSorteio(ArrayList<Aluno> nomes){
       
-         conn= conexao.abrirConnection();
-         x=conn.prepareStatement(stmt5);
-         x.setString(1, turma);
-         resp= x.executeQuery();
-         while (resp.next()) {
-           
-            x1=conn.prepareStatement(stmt6);
-            String numero= Integer.toString(resp.getInt("fk_matricula_Pessoa"));
-            x1.setString(1,numero);
-            resp1=x1.executeQuery();
-            while(resp1.next()){
-               nomes.add(resp.getString("nome_Pessoa"));
-            }   
-            x1.close();
-            resp1.close();
-                      
-         }
-         x.close();   
-              
-      }catch(SQLException e){
-         e.printStackTrace();
-      }finally{
-         try{
-            
-            if (conn != null){
-               conn.close(); 
-            }
-            
-         }catch(SQLException t){
-            t.printStackTrace();
-         }
+      Pilha p= new Pilha(nomes.size());
+      Collections.shuffle(nomes);
+      Collections.shuffle(nomes);
+      for(int i=0; i<nomes.size();i++){
+         String atributo = nomes.get(i).getMatriculaA();
+         p.push(atributo);
       }
+      return p;
       
-      return nomes;
-   }
+      
+      
+  }
    
    
    public void listarAlunosCompleto(String turma,String vet[][]){
@@ -292,7 +268,17 @@ public class ListaAlunos{
    }
 
    
-   
+   public Aluno buscarAluno(ArrayList<Aluno> nomes,String ra){
+      int j=0;
+      for(int i=0; i < nomes.size(); i++){
+         if(nomes.get(i).getMatriculaA().equals(ra)){
+           j= i; 
+         }             
+      }
+      Aluno estudante= nomes.get(j);
+      return estudante;
+ 
+   }
       
 
    

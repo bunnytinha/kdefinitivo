@@ -31,6 +31,7 @@ import javax.swing.event.ListSelectionEvent;
 import java.text.ParseException;
 
 
+
 //classe do tipo tela
 public class BancoDePerguntas extends JFrame implements ActionListener, ListSelectionListener {
 
@@ -122,9 +123,6 @@ public class BancoDePerguntas extends JFrame implements ActionListener, ListSele
          alterar.setOpaque(false);
          alterar.setBorderPainted(false);
          alterar.setContentAreaFilled(false);
-
-         
-
 
          //painel geral
          painelDeConteudo.setLayout(null); 
@@ -256,10 +254,13 @@ public class BancoDePerguntas extends JFrame implements ActionListener, ListSele
             
              
             remove(container);
+            remove(bg);
             conteudo= indicaPerguntas();            
-            container = criaTabela();           
-            add(container);           
-            container.setBounds(centroW-300,centroH,600,200);             
+            container = criaTabela();                      
+            container.setBounds(centroW-300,centroH+130,600,200);
+            bg.setBounds(0,0,telaW,telaH);   
+            add(container);
+            add(bg);          
             repaint(); 
             
             perguntaT.setText("");
@@ -267,10 +268,11 @@ public class BancoDePerguntas extends JFrame implements ActionListener, ListSele
             temaT.setText("");
             idT.setText("");
             
-         }else if(c.getSource() == voltar){
+         }
+         else if(c.getSource() == voltar){
             new TelaAtividades();
             dispose();
-            System.out.println("Voltar para Tela Atividades");
+            System.out.println("Volta para Tela Atividades.");
          }
       }
       
@@ -314,6 +316,9 @@ public class BancoDePerguntas extends JFrame implements ActionListener, ListSele
               
          }
       }*/   
+   
+   
+
    
 
    //faz a tela aparecer

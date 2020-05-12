@@ -315,18 +315,24 @@ public class ListaDeAluno extends JFrame implements ActionListener, ItemListener
          
          
             remove(container1);
+            remove(bg);
             conteudo1= tamanhoNotas();            
-            container1 = criaTabela1();           
-            add(container1);           
-            container1.setBounds(centroW+10,centroH,300,200);            
+            container1 = criaTabela1();                     
+            container1.setBounds(centroW+10,centroH+100,300,200);
+            bg.setBounds(0,0,telaW,telaH);
+            add(container1);
+            add(bg);            
             repaint();  
             
          }else if(c.getSource() == conferir){            
             remove(container1);
+            remove(bg);
             conteudo1= tamanhoNotas();            
-            container1 = criaTabela1();           
-            add(container1);           
-            container1.setBounds(centroW+10,centroH,300,200);            
+            container1 = criaTabela1();                      
+            container1.setBounds(centroW+10,centroH+100,300,200);
+            bg.setBounds(0,0,telaW,telaH);
+            add(container1);    
+            add(bg);        
             repaint();
          }else if(c.getSource() == voltar){
             new TelaAlunos();

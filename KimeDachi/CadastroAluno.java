@@ -40,12 +40,12 @@ public class CadastroAluno extends JFrame implements ActionListener, ItemListene
       private JTextField nome= new JTextField("");
       private JTextField ra= new JTextField("");
       private JTextField email= new JTextField("");
-      private JLabel nomeA= new JLabel("Nome:");
+      private JLabel nomeA= new JLabel("NOME:");
       private JLabel raA= new JLabel("RA:");
-      private JLabel emailA= new JLabel("E-mail:");
-      private JLabel turmaA= new JLabel("turma:");
-      private JButton adicionar= new JButton("adicionar");
-      private JButton voltar= new JButton("voltar");
+      private JLabel emailA= new JLabel("E-MAIL");
+      private JLabel turmaA= new JLabel("TURMA:");
+      private JButton adicionar= new JButton("ADICIONAR");
+      private JButton voltar= new JButton("VOLTAR");
 
       //relacionas ao design
       private ImageIcon ibg = new ImageIcon("../Imagens/bg3.png");
@@ -98,22 +98,22 @@ public class CadastroAluno extends JFrame implements ActionListener, ItemListene
          centroH = telaH/2;
          
          //estilo
-         nomeA.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         nomeA.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          nomeA.setForeground(Color.WHITE);
-         raA.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         raA.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          raA.setForeground(Color.WHITE);
-         emailA.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         emailA.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          emailA.setForeground(Color.WHITE);
-         turmaA.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         turmaA.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          turmaA.setForeground(Color.WHITE);
          
          //estilos botoes
-         voltar.setFont(new Font("BEBAS", Font.PLAIN, 36));
+         voltar.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 36));
          voltar.setForeground(Color.WHITE);
          voltar.setOpaque(false);
          voltar.setBorderPainted(false);
          voltar.setContentAreaFilled(false);
-         adicionar.setFont(new Font("BEBAS", Font.PLAIN, 30));
+         adicionar.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 30));
          adicionar.setForeground(Color.WHITE);
          adicionar.setOpaque(false);
          adicionar.setBorderPainted(false);
@@ -297,9 +297,12 @@ public class CadastroAluno extends JFrame implements ActionListener, ItemListene
             alunos = (String) filtro.getSelectedItem();
             conteudo= indicaAlunos();
             remove(container);
+            remove(bg);
             container = criaTabela();
+            container.setBounds(centroW-300,centroH+40,600,200);
+            bg.setBounds(0,0,telaW,telaH);
             add(container);
-            container.setBounds(centroW-300,centroH,600,200); 
+            add(bg); 
             repaint();
               
          }

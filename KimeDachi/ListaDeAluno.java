@@ -37,18 +37,18 @@ public class ListaDeAluno extends JFrame implements ActionListener, ItemListener
 
       //variaveis privadas 
       private Container painelDeConteudo;  
-      private JLabel filtroA = new JLabel("Turma:");   
-      private JLabel nomeA= new JLabel("Nome:");
+      private JLabel filtroA = new JLabel("TURMA:");   
+      private JLabel nomeA= new JLabel("NOME:");
       private JTextField nome= new JTextField("");
       private JTextField data= new JTextField("");
       private JTextField presenca= new JTextField("");
       private JTextField nota= new JTextField("");
-      private JLabel dataA= new JLabel("Data:");
-      private JLabel presencaA= new JLabel("Presenca:");
-      private JLabel notaA= new JLabel("Nota:");
-      private JButton alterar= new JButton("alterar");
-      private JButton voltar= new JButton("voltar");
-      private JButton conferir= new JButton("conferir");
+      private JLabel dataA= new JLabel("DATA:");
+      private JLabel presencaA= new JLabel("PRESENÇA:");
+      private JLabel notaA= new JLabel("NOTA:");
+      private JButton alterar= new JButton("ALTERAR");
+      private JButton voltar= new JButton("VOLTAR");
+      private JButton conferir= new JButton("CONFERIR");
       
       //relacionas ao design
       private ImageIcon ibg = new ImageIcon("../Imagens/bg3.png");
@@ -111,29 +111,29 @@ public class ListaDeAluno extends JFrame implements ActionListener, ItemListener
          centroH = telaH/2;
          
          //estilo
-         filtroA.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         filtroA.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          filtroA.setForeground(Color.WHITE);
-         nomeA.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         nomeA.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          nomeA.setForeground(Color.WHITE);
-         dataA.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         dataA.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          dataA.setForeground(Color.WHITE);
-         presencaA.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         presencaA.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          presencaA.setForeground(Color.WHITE);
-         notaA.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         notaA.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          notaA.setForeground(Color.WHITE);
          
          //estilo botao
-         voltar.setFont(new Font("BEBAS", Font.PLAIN, 36));
+         voltar.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 36));
          voltar.setForeground(Color.WHITE);
          voltar.setOpaque(false);
          voltar.setBorderPainted(false);
          voltar.setContentAreaFilled(false);
-         conferir.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         conferir.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          conferir.setForeground(Color.WHITE);
          conferir.setOpaque(false);
          conferir.setBorderPainted(false);
          conferir.setContentAreaFilled(false);
-         alterar.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         alterar.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          alterar.setForeground(Color.WHITE);
          alterar.setOpaque(false);
          alterar.setBorderPainted(false);

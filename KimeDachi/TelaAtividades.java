@@ -43,9 +43,9 @@ public class TelaAtividades extends JFrame implements ActionListener{
    private JLabel lbperguntas = new JLabel(iperguntas);
    private ImageIcon ivoltar = new ImageIcon("../Imagens/voltar1.png");
    private JLabel lbvoltar = new JLabel(ivoltar);
-   private JButton novasAtividades = new JButton("Novas Atividades");
-   private JButton atividades = new JButton("Atividades");
-   private JButton voltar = new JButton("Voltar");
+   private JButton novasAtividades = new JButton("NOVAS ATIVIDADES");
+   private JButton atividades = new JButton("ATIVIDADES");
+   private JButton voltar = new JButton("VOLTAR");
    private ImageIcon bm = new ImageIcon("../Imagens/banneratividades.png");
    private JLabel bannerM = new JLabel(bm);
    private ImageIcon bn = new ImageIcon("../Imagens/bannerkd.png");
@@ -81,9 +81,9 @@ public class TelaAtividades extends JFrame implements ActionListener{
          
       
       //estio dos botoes
-      atividades.setFont(new Font("BEBAS", Font.PLAIN, 42));
-      novasAtividades.setFont(new Font("BEBAS", Font.PLAIN, 42));
-      voltar.setFont(new Font("BEBAS", Font.PLAIN, 42));
+      atividades.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 42));
+      novasAtividades.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 42));
+      voltar.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 42));
       atividades.setForeground(Color.WHITE);
       novasAtividades.setForeground(Color.WHITE);
       voltar.setForeground(Color.WHITE);

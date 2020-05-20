@@ -37,14 +37,14 @@ public class AulaDojo extends JFrame implements ActionListener, ItemListener{
 
       
       private Container tela;
-      private JLabel data= new JLabel("Data");
-      private JLabel tema = new JLabel("Tema");
-      private JLabel atividade = new JLabel("Atividade");
-      private JButton voltar =new JButton("Voltar");
-      private JButton conferirP= new JButton("conferir");
-      private JButton escolherA= new JButton("chamada"); 
-      private JButton atribuirP = new JButton("Atribuir");
-      private JButton atribuirC = new JButton("Atribuir");
+      private JLabel data= new JLabel("DATA");
+      private JLabel tema = new JLabel("TEMA");
+      private JLabel atividade = new JLabel("ATIVIDADE");
+      private JButton voltar =new JButton("VOLTAR");
+      private JButton conferirP= new JButton("CONFERIR");
+      private JButton escolherA= new JButton("CHAMADA"); 
+      private JButton atribuirP = new JButton("ATRIBUIR");
+      private JButton atribuirC = new JButton("ATRIBUIR");
       private JTextField copiloto= new JTextField("Copiloto");
       private JTextField piloto= new JTextField("Piloto");
       private JTextArea apresentaP= new JTextArea("");//
@@ -74,9 +74,9 @@ public class AulaDojo extends JFrame implements ActionListener, ItemListener{
       private JLabel lbvoltar = new JLabel(ivoltar);
       private ImageIcon iconferir = new ImageIcon("../Imagens/checar1.png");
       private JLabel lbconferir = new JLabel(iconferir);
-      private ImageIcon iind = new ImageIcon("../Imagens/indicador.png");
-      private JLabel ind = new JLabel(iind);
-      private ImageIcon iind1 = new ImageIcon("../Imagens/indicador1.png");
+      private ImageIcon isort = new ImageIcon("../Imagens/sorteio.png");
+      private JLabel sorteio = new JLabel(isort);
+      private ImageIcon iind1 = new ImageIcon("../Imagens/chamada.png");
       private JLabel ind1 = new JLabel(iind1);
 
       
@@ -176,7 +176,6 @@ public class AulaDojo extends JFrame implements ActionListener, ItemListener{
             lbconferir.setBounds(centroW-150,centroH-201,200,30);
             painel.setBounds(centroW-telaW/4,centroH-150,telaW/2,100);
             escolherA.setBounds(centroW-100,centroH,200,25);
-            ind.setBounds(centroW-50,centroH,200,25);
             ind1.setBounds(centroW-150,centroH,200,25);
             piloto.setBounds(centroW-310,centroH+50,200,25);
             presenca1.setBounds(centroW+50,centroH+50,100,24);
@@ -195,38 +194,38 @@ public class AulaDojo extends JFrame implements ActionListener, ItemListener{
             
             
             //estilo botao
-            voltar.setFont(new Font("BEBAS", Font.PLAIN, 36));
+            voltar.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 36));
             voltar.setForeground(Color.WHITE);
             voltar.setOpaque(false);
             voltar.setBorderPainted(false);
             voltar.setContentAreaFilled(false);
-            conferirP.setFont(new Font("BEBAS", Font.PLAIN, 24));
+            conferirP.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
             conferirP.setForeground(Color.WHITE);
             conferirP.setOpaque(false);
             conferirP.setBorderPainted(false);
             conferirP.setContentAreaFilled(false);
-            escolherA.setFont(new Font("BEBAS", Font.PLAIN, 24));
+            escolherA.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
             escolherA.setForeground(Color.WHITE);
             escolherA.setOpaque(false);
             escolherA.setBorderPainted(false);
             escolherA.setContentAreaFilled(false);
-            atribuirP.setFont(new Font("BEBAS", Font.PLAIN, 24));
+            atribuirP.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
             atribuirP.setForeground(Color.WHITE);
             atribuirP.setOpaque(false);
             atribuirP.setBorderPainted(false);
             atribuirP.setContentAreaFilled(false);
-            atribuirC.setFont(new Font("BEBAS", Font.PLAIN, 24));
+            atribuirC.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
             atribuirC.setForeground(Color.WHITE);
             atribuirC.setOpaque(false);
             atribuirC.setBorderPainted(false);
             atribuirC.setContentAreaFilled(false);
             
             //estilo
-            data.setFont(new Font("BEBAS", Font.PLAIN, 20));
+            data.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 20));
             data.setForeground(Color.WHITE);
-            tema.setFont(new Font("BEBAS", Font.PLAIN, 20));
+            tema.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 20));
             tema.setForeground(Color.WHITE);
-            atividade.setFont(new Font("BEBAS", Font.PLAIN, 20));
+            atividade.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 20));
             atividade.setForeground(Color.WHITE);
             
             tela.add(filtro);
@@ -242,7 +241,6 @@ public class AulaDojo extends JFrame implements ActionListener, ItemListener{
             tela.add(lbconferir);
             tela.add(painel);
             tela.add(escolherA);
-            tela.add(ind);
             tela.add(ind1);
             tela.add(presenca);
             tela.add(presenca1);
@@ -324,7 +322,13 @@ public class AulaDojo extends JFrame implements ActionListener, ItemListener{
                         sorteados.add(x);
                      }
                   }
-                  escolherA.setText("sorteio");
+                  remove(ind1);
+                  remove(bg);
+                  sorteio.setBounds(centroW-150,centroH,200,25);
+                  bg.setBounds(0,0,telaW,telaH);
+                  add(sorteio);
+                  add(bg);
+                  escolherA.setText("SORTEIO");
                   p= list.listaSorteio(sorteados);
                }else{
                   day=(dd.getSelectedItem() + "/" + mm.getSelectedItem() + "/" + ano.getText());
@@ -429,12 +433,15 @@ public class AulaDojo extends JFrame implements ActionListener, ItemListener{
          if(e.getStateChange() == ItemEvent.SELECTED){
             
             remove(perguntas);
+            remove(bg);
             listaT = (String) temas.getSelectedItem();
             indicaPergunta();
             perguntas= new JComboBox(contP);
             perguntas.setBounds(centroW-100,centroH-250,200,24);
+            bg.setBounds(0,0,telaW,telaH);
             listaP = (String) perguntas.getSelectedItem(); 
             add(perguntas);
+            add(bg);
             validate();
             repaint();
 

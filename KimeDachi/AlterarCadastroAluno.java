@@ -40,12 +40,12 @@ public class AlterarCadastroAluno extends JFrame implements ActionListener, Item
       private JTextField nome= new JTextField("");
       private JTextField ra= new JTextField("");
       private JTextField email= new JTextField("");
-      private JLabel nomeA= new JLabel("Nome:");
+      private JLabel nomeA= new JLabel("NOME:");
       private JLabel raA= new JLabel("RA:");
-      private JLabel emailA= new JLabel("E-mail:");
-      private JLabel turmaA= new JLabel("turma:");
-      private JButton alterar= new JButton("alterar");
-      private JButton voltar= new JButton("voltar");
+      private JLabel emailA= new JLabel("E-MAIL:");
+      private JLabel turmaA= new JLabel("TURMA:");
+      private JButton alterar= new JButton("ALTERAR");
+      private JButton voltar= new JButton("VOLTAR");
       
       
       //relacionas ao design
@@ -64,7 +64,7 @@ public class AlterarCadastroAluno extends JFrame implements ActionListener, Item
       private JScrollPane container;            
       private JTable tabela;
       private String[][] conteudo;     
-      private String colunas[]= {"nome","RA","email"};
+      private String colunas[]= {"NOME","RA","E-MAIL"};
 
       //relacionados a combo box
       private JComboBox filtro;
@@ -114,22 +114,22 @@ public class AlterarCadastroAluno extends JFrame implements ActionListener, Item
          
 
          //estilo
-         nomeA.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         nomeA.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          nomeA.setForeground(Color.WHITE);
-         raA.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         raA.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          raA.setForeground(Color.WHITE);
-         emailA.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         emailA.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          emailA.setForeground(Color.WHITE);
-         turmaA.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         turmaA.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          turmaA.setForeground(Color.WHITE);
          
          //estilos botoes
-         voltar.setFont(new Font("BEBAS", Font.PLAIN, 36));
+         voltar.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 36));
          voltar.setForeground(Color.WHITE);
          voltar.setOpaque(false);
          voltar.setBorderPainted(false);
          voltar.setContentAreaFilled(false);
-         alterar.setFont(new Font("BEBAS", Font.PLAIN, 30));
+         alterar.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 30));
          alterar.setForeground(Color.WHITE);
          alterar.setOpaque(false);
          alterar.setBorderPainted(false);

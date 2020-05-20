@@ -45,10 +45,10 @@ public class TelaAlunos extends JFrame implements ActionListener{
    private JLabel lbdojo = new JLabel(idojo);
    private ImageIcon ivoltar = new ImageIcon("../Imagens/voltar1.png");
    private JLabel lbvoltar = new JLabel(ivoltar);
-   private JButton listaAlunos = new JButton("Lista de Alunos");
-   private JButton cadastroAlunos = new JButton("Cadastro de Alunos");
-   private JButton alterarAlunos = new JButton("Alterar Cadastro");
-   private JButton voltar = new JButton("Voltar");
+   private JButton listaAlunos = new JButton("LISTA DE ALUNOS");
+   private JButton cadastroAlunos = new JButton("CADASTRO DE ALUNOS");
+   private JButton alterarAlunos = new JButton("ALTERAR CADASTRO");
+   private JButton voltar = new JButton("VOLTAR");
    private ImageIcon icon = new ImageIcon("../Imagens/kimedachi200.png");//aqui coloca a URL da imagem
    private JLabel kimedachi = new JLabel(icon);//coloca a imagem em uma label
    private ImageIcon bm = new ImageIcon("../Imagens/banneralunos.png");
@@ -88,10 +88,10 @@ public class TelaAlunos extends JFrame implements ActionListener{
          
 
       //estio dos botoes
-      listaAlunos.setFont(new Font("BEBAS", Font.PLAIN, 42));
-      cadastroAlunos.setFont(new Font("BEBAS", Font.PLAIN, 42));
-      alterarAlunos.setFont(new Font("BEBAS", Font.PLAIN, 42));
-      voltar.setFont(new Font("BEBAS", Font.PLAIN, 42));
+      listaAlunos.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 42));
+      cadastroAlunos.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 42));
+      alterarAlunos.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 42));
+      voltar.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 42));
       listaAlunos.setForeground(Color.WHITE);
       cadastroAlunos.setForeground(Color.WHITE);
       alterarAlunos.setForeground(Color.WHITE);

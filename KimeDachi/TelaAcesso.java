@@ -45,11 +45,11 @@ public class TelaAcesso extends JFrame implements ActionListener{
    private Container painelDeConteudo;   //tem que criar container
 
    //inicia os privates Jtable, Jlabel, JTextField, Jbutton  
-   private JLabel user = new JLabel("usuario:");
+   private JLabel user = new JLabel("USUÁRIO:");
    private JTextField tuser = new JTextField("");
-   private JLabel senha = new JLabel("senha:");
+   private JLabel senha = new JLabel("SENHA:");
    private JPasswordField tsenha = new JPasswordField("");
-   private JButton login = new JButton("Acessar");
+   private JButton login = new JButton("ACESSAR");
    private ImageIcon icon = new ImageIcon("../Imagens/kimedachi200.png");//aqui coloca a URL da imagem
    private JLabel kimedachi = new JLabel(icon);//coloca a imagem em uma label
    private ImageIcon ibg = new ImageIcon("../Imagens/bg3.png");
@@ -82,13 +82,13 @@ public class TelaAcesso extends JFrame implements ActionListener{
       bg.setBounds(0,0,telaW,telaH);
       
       //estilo
-      user.setFont(new Font("BEBAS", Font.PLAIN, 36));
+      user.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 36));
       user.setForeground(Color.WHITE);
 
-      senha.setFont(new Font("BEBAS", Font.PLAIN, 36));
+      senha.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 36));
       senha.setForeground(Color.WHITE);
 
-      login.setFont(new Font("BEBAS", Font.PLAIN, 42));
+      login.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 42));
       login.setForeground(Color.WHITE);
       login.setOpaque(false);
       login.setBorderPainted(false);

@@ -42,12 +42,12 @@ public class BancoDePerguntas extends JFrame implements ActionListener, ListSele
       private JTextArea respostaT= new JTextArea("");
       private JTextField temaT= new JTextField("");
       private JTextField idT= new JTextField("");
-      private JLabel pergunta= new JLabel("pergunta:");
-      private JLabel resposta= new JLabel("resposta:");
-      private JLabel tema= new JLabel("tema:");
-      private JLabel id= new JLabel("resumo:");
-      private JButton alterar= new JButton("alterar");
-      private JButton voltar= new JButton("voltar");
+      private JLabel pergunta= new JLabel("PERGUNTA:");
+      private JLabel resposta= new JLabel("RESPOSTA:");
+      private JLabel tema= new JLabel("TEMA:");
+      private JLabel id= new JLabel("RESUMO:");
+      private JButton alterar= new JButton("ALTERAR");
+      private JButton voltar= new JButton("VOLTAR");
 
       //relacionas ao design
       private ImageIcon ibg = new ImageIcon("../Imagens/bg3.png");
@@ -107,22 +107,22 @@ public class BancoDePerguntas extends JFrame implements ActionListener, ListSele
          container = criaTabela();
          
          //estilo
-         pergunta.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         pergunta.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          pergunta.setForeground(Color.WHITE);
-         resposta.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         resposta.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          resposta.setForeground(Color.WHITE);
-         tema.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         tema.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          tema.setForeground(Color.WHITE);
-         id.setFont(new Font("BEBAS", Font.PLAIN, 24));
+         id.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 24));
          id.setForeground(Color.WHITE);
          
          //estilos botoes
-         voltar.setFont(new Font("BEBAS", Font.PLAIN, 36));
+         voltar.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 36));
          voltar.setForeground(Color.WHITE);
          voltar.setOpaque(false);
          voltar.setBorderPainted(false);
          voltar.setContentAreaFilled(false);
-         alterar.setFont(new Font("BEBAS", Font.PLAIN, 30));
+         alterar.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 30));
          alterar.setForeground(Color.WHITE);
          alterar.setOpaque(false);
          alterar.setBorderPainted(false);

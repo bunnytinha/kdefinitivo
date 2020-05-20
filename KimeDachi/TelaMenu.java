@@ -54,9 +54,9 @@ public class TelaMenu extends JFrame implements ActionListener{
    private JLabel lbperguntas = new JLabel(iperguntas);
    private ImageIcon idojo = new ImageIcon("../Imagens/dojo1.png");
    private JLabel lbdojo = new JLabel(idojo);
-   private JButton alunos = new JButton("Alunos");
-   private JButton perguntas = new JButton("Atividades");
-   private JButton dojo = new JButton("Dojo");
+   private JButton alunos = new JButton("ALUNOS");
+   private JButton perguntas = new JButton("ATIVIDADES");
+   private JButton dojo = new JButton("DOJO");
    private ImageIcon icon = new ImageIcon("../Imagens/kimedachi200.png");//aqui coloca a URL da imagem
    private JLabel kimedachi = new JLabel(icon);//coloca a imagem em uma label
    private ImageIcon bm = new ImageIcon("../Imagens/bannermenu.png");
@@ -93,9 +93,9 @@ public class TelaMenu extends JFrame implements ActionListener{
       bannerM.setBounds(centroW+280,centroH-500,700,300);
       
       //estio dos botoes
-      alunos.setFont(new Font("BEBAS", Font.PLAIN, 42));
-      perguntas.setFont(new Font("BEBAS", Font.PLAIN, 42));
-      dojo.setFont(new Font("BEBAS", Font.PLAIN, 42));
+      alunos.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 42));
+      perguntas.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 42));
+      dojo.setFont(new Font("AlternateGothic2 BT", Font.PLAIN, 42));
       alunos.setForeground(Color.WHITE);
       perguntas.setForeground(Color.WHITE);
       dojo.setForeground(Color.WHITE);

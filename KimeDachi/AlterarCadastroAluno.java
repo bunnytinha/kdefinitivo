@@ -156,8 +156,8 @@ public class AlterarCadastroAluno extends JFrame implements ActionListener, Item
          voltar.setBounds(centroW-150,centroH+260,300,100);
          lbvoltar.setBounds(centroW-250,centroH+260,300,100);
          bg.setBounds(0,0,telaW,telaH);
-         bannerK.setBounds(centroW-1050,centroH-570,700,300);
-         bannerM.setBounds(centroW+400,centroH-570,700,300);
+         bannerK.setBounds(centroW-900,centroH-500,700,300);
+         bannerM.setBounds(centroW+280,centroH-500,700,300);
 
          
          
@@ -257,25 +257,27 @@ public class AlterarCadastroAluno extends JFrame implements ActionListener, Item
             eN=email.getText();
             tN=alunos;
             
-            Aluno novo=new Aluno("","","","");
-            novo.setNomeA(nN);
-            novo.setMatriculaA(rN);
-            novo.setTurmaA(tN);
-            novo.setEmailA(eN);            
             
-            ListaAlunos alterando= new ListaAlunos();
-            alterando.alterarAluno(r,novo);
             
-            conteudo= indicaAlunos();
-            remove(container);
-            remove(bg);
-            container = criaTabela();
-            container.setBounds(centroW-300,centroH+40,600,200);
-            bg.setBounds(0,0,telaW,telaH);
-            add(container);
-            add(bg);  
-            repaint();
-             
+               Aluno novo=new Aluno("","","","");
+               novo.setNomeA(nN);
+               novo.setMatriculaA(rN);
+               novo.setTurmaA(tN);
+               novo.setEmailA(eN);            
+               
+               ListaAlunos alterando= new ListaAlunos();
+               alterando.alterarAluno(r,novo);
+               
+               conteudo= indicaAlunos();
+               remove(container);
+               remove(bg);
+               container = criaTabela();
+               container.setBounds(centroW-300,centroH+40,600,200);
+               bg.setBounds(0,0,telaW,telaH);
+               add(container);
+               add(bg);  
+               repaint();
+                
             
          }else if(c.getSource() == voltar){
             new TelaAlunos();

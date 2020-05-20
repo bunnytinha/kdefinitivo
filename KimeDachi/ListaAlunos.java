@@ -110,7 +110,7 @@ public class ListaAlunos{
          x2.setString(1, matricula);
          resp= x2.executeQuery();
          while (resp.next()) {
-            id =Integer.toString(resp.getInt("matricula_Aluno"));        
+            id =Integer.toString(resp.getInt("fk_matricula_Pessoa"));        
          }
          x2.close();
          

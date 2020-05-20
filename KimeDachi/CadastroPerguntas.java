@@ -37,10 +37,10 @@ public class CadastroPerguntas extends JFrame implements ActionListener{
 
       //variaveis privadas 
       private Container painelDeConteudo;
-      private JTextField perguntaT= new JTextField("");
-      private JTextField respostaT= new JTextField("");
+      private JTextArea perguntaT= new JTextArea("");
+      private JTextArea respostaT= new JTextArea("");
       private JTextField temaT= new JTextField("");
-      private JTextField idT= new JTextField("pergunta em 2 palavras ou menos");
+      private JTextField idT= new JTextField("");
       private JLabel pergunta= new JLabel("pergunta:");
       private JLabel resposta= new JLabel("resposta:");
       private JLabel tema= new JLabel("tema:");
@@ -135,7 +135,9 @@ public class CadastroPerguntas extends JFrame implements ActionListener{
          pp = new JScrollPane(perguntaT);
          rr = new JScrollPane(respostaT);
 
-         
+         perguntaT.setLineWrap(true);
+         respostaT.setLineWrap(true);
+                  
          
          //posicionamento das coisas   
          
@@ -153,9 +155,9 @@ public class CadastroPerguntas extends JFrame implements ActionListener{
          voltar.setBounds(centroW-100,centroH+360,200,100);
          lbvoltar.setBounds(centroW-200,centroH+360,200,100);
          bg.setBounds(0,0,telaW,telaH);
-         bannerK.setBounds(centroW-1050,centroH-570,700,300);
-         bannerM.setBounds(centroW+350,centroH-570,700,300);
-      
+         bannerK.setBounds(centroW-900,centroH-500,700,300);
+         bannerM.setBounds(centroW+280,centroH-500,700,300);
+         
          //listener nos botões   
          adicionar.addActionListener(this);        
          voltar.addActionListener(this);         
@@ -246,32 +248,44 @@ public class CadastroPerguntas extends JFrame implements ActionListener{
             r=respostaT.getText();
             re=idT.getText();
             
-            Pergunta perg= new Pergunta("","","","");
-            perg.setPergunta(p);
-            perg.setResposta(r);
-            perg.setTema(t);
-            perg.setId(re);
+            int tv,pv,rv,rev;
             
-            ListaPerguntas adicionando= new ListaPerguntas();
-            adicionando.addPergunta(perg);
+            tv=t.compareTo("");
+            pv=p.compareTo("");
+            rv=r.compareTo("");
+            rev=re.compareTo("");
             
+            if(rv!= 0 && pv!=0 && tv!=0 && rev!=0){
             
-            
-             
-            remove(container);
-            remove(bg);
-            conteudo= indicaPerguntas();            
-            container = criaTabela();                  
-            container.setBounds(centroW-300,centroH+130,600,200);
-            bg.setBounds(0,0,telaW,telaH);
-            add(container);
-            add(bg);             
-            repaint(); 
-            
-            perguntaT.setText("");
-            respostaT.setText("");
-            temaT.setText("");
-            idT.setText("");
+               Pergunta perg= new Pergunta("","","","");
+               perg.setPergunta(p);
+               perg.setResposta(r);
+               perg.setTema(t);
+               perg.setId(re);
+               
+               ListaPerguntas adicionando= new ListaPerguntas();
+               adicionando.addPergunta(perg);
+               
+               
+                  
+                
+               remove(container);
+               remove(bg);
+               conteudo= indicaPerguntas();            
+               container = criaTabela();                  
+               container.setBounds(centroW-300,centroH+130,600,200);
+               bg.setBounds(0,0,telaW,telaH);
+               add(container);
+               add(bg);             
+               repaint(); 
+               
+               perguntaT.setText("");
+               respostaT.setText("");
+               temaT.setText("");
+               idT.setText("");
+            }else{
+               JOptionPane.showMessageDialog(null,"campo incompleto");
+            }
             
          }else if(c.getSource() == voltar){
             new TelaAtividades();

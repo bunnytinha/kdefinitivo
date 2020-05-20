@@ -2,6 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.net.URL;
+import javax.swing.JSplitPane;
+import javax.swing.JTabbedPane;
+import java.awt.Dimension;
+import java.awt.EventQueue;
 import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -57,15 +61,17 @@ public class TelaAcesso extends JFrame implements ActionListener{
          
       //declara o painel         
       painelDeConteudo = getContentPane(); 
-         
+       
       //define o tamanho da tela
       Toolkit tk = Toolkit.getDefaultToolkit();
       Dimension d = tk.getScreenSize();
       int telaW= d.width;
       int telaH= d.height;
+      //int telaW = 1600;
+      //int telaH = 900;
       int centroW = telaW/2;
       int centroH = telaH/2;
-         
+          
       //define a posição e tamanho dos itens (posição horizontal,posição vertical,tamanho horizontal, tamanho vertical)
       kimedachi.setBounds(centroW-150,centroH-350,300,300);
       user.setBounds(centroW-120, centroH-70, 120, 30);
@@ -102,6 +108,7 @@ public class TelaAcesso extends JFrame implements ActionListener{
       painelDeConteudo.add(tsenha);
       painelDeConteudo.add(login);
       painelDeConteudo.add(bg);
+
 
       //arruma tamanho layout e visibilidade do frame
       setSize(telaW,telaH);//tela do tamanho da tela do usuario

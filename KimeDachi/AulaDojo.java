@@ -47,7 +47,7 @@ public class AulaDojo extends JFrame implements ActionListener, ItemListener{
       private JButton atribuirC = new JButton("Atribuir");
       private JTextField copiloto= new JTextField("Copiloto");
       private JTextField piloto= new JTextField("Piloto");
-      private JTextField apresentaP= new JTextField("");//
+      private JTextArea apresentaP= new JTextArea("");//
       private JTextField notaP= new JTextField("nota");
       private JTextField notaC= new JTextField("nota");
       private JTextField ano= new JTextField("2000");
@@ -159,6 +159,8 @@ public class AulaDojo extends JFrame implements ActionListener, ItemListener{
             tela= getContentPane();
             tela.setLayout(null);
             
+            apresentaP.setLineWrap(true);
+            
             painel = new JScrollPane(apresentaP);
             
             
@@ -188,8 +190,8 @@ public class AulaDojo extends JFrame implements ActionListener, ItemListener{
             lbvoltar.setBounds(centroW-200,centroH+165,200,30);
             filtro.setBounds(centroW-100,centroH-45,200,20);
             bg.setBounds(0,0,telaW,telaH);
-            bannerK.setBounds(-700,-400,telaW,telaH);
-            bannerM.setBounds(+700,-400,telaW,telaH);
+            bannerK.setBounds(centroW-900,centroH-500,700,300);
+            bannerM.setBounds(centroW+280,centroH-500,700,300);
             
             
             //estilo botao
@@ -278,105 +280,139 @@ public class AulaDojo extends JFrame implements ActionListener, ItemListener{
       }
       
       public void actionPerformed(ActionEvent f){
-         if(f.getSource() == conferirP){
-            
-            listaP =""+perguntas.getSelectedItem();
-            
-            ListaPerguntas tem= new ListaPerguntas();
-            Pergunta perg= new Pergunta("","","","");
-            tem.getPerguntas(perg,listaT,listaP);
-            
-            
-            apresentaP.setText(""+perg.getPergunta());
-           
-            
+         int verific=0;
+         boolean veri= true ;
+         try{
+           verific = Integer.parseInt(ano.getText());
+         }catch(Exception e){
+             veri = false;
          }
-         if(f.getSource() == escolherA){
-            listaF = (String) filtro.getSelectedItem();
-            String a =escolherA.getText();
-            if(a.compareTo("chamada")==0){
-               day=(dd.getSelectedItem() + "/" + mm.getSelectedItem() + "/" + ano.getText());
-               int w= list.contarAlunos(listaF);
-               sorteados= new ArrayList<Aluno>();
-               estudantes= new String[w][2];
-               list.listarAlunos(listaF, estudantes);
-               for(int i=0;w>i;i++){
-                  String c = JOptionPane.showInputDialog(estudantes[i][0]+" estudante de RA: "+estudantes[i][1]+"\n está presente? (digite 'F' para falta ou 'P' para presente)"); 
-                  if(c.compareToIgnoreCase("F")== 0){
-                     Nota nn= new Nota(0,day,"F");
-                     atribuindo.addNota(nn,estudantes[i][1]);
-                     
-                  }else if(c.compareToIgnoreCase("P")== 0){
-                     Aluno x= new Aluno("","","","");
-                     x.setNomeA(estudantes[i][0]);
-                     x.setMatriculaA(estudantes[i][1]);
-                     sorteados.add(x);
+                  
+         if(veri==true && verific>=2020){   
+            if(f.getSource() == conferirP){
+               
+               listaP =""+perguntas.getSelectedItem();
+               
+               ListaPerguntas tem= new ListaPerguntas();
+               Pergunta perg= new Pergunta("","","","");
+               tem.getPerguntas(perg,listaT,listaP);
+               
+               
+               apresentaP.setText(""+perg.getPergunta());
+              
+               
+            }
+            if(f.getSource() == escolherA){
+               listaF = (String) filtro.getSelectedItem();
+               String a =escolherA.getText();
+               if(a.compareTo("chamada")==0){
+                  day=(dd.getSelectedItem() + "/" + mm.getSelectedItem() + "/" + ano.getText());
+                  int w= list.contarAlunos(listaF);
+                  sorteados= new ArrayList<Aluno>();
+                  estudantes= new String[w][2];
+                  list.listarAlunos(listaF, estudantes);
+                  for(int i=0;w>i;i++){
+                     String c = JOptionPane.showInputDialog(estudantes[i][0]+" estudante de RA: "+estudantes[i][1]+"\n está presente? (digite 'F' para falta ou 'P' para presente)"); 
+                     if(c.compareToIgnoreCase("F")== 0){
+                        Nota nn= new Nota(0,day,"F");
+                        atribuindo.addNota(nn,estudantes[i][1]);
+                        
+                     }else if(c.compareToIgnoreCase("P")== 0){
+                        Aluno x= new Aluno("","","","");
+                        x.setNomeA(estudantes[i][0]);
+                        x.setMatriculaA(estudantes[i][1]);
+                        sorteados.add(x);
+                     }
                   }
-               }
-               escolherA.setText("sorteio");
-               p= list.listaSorteio(sorteados);
-            }else{
-               day=(dd.getSelectedItem() + "/" + mm.getSelectedItem() + "/" + ano.getText());
-               String ra,ra1;
-               if(p.isEmpty() == false){
-                  ra=p.pop();
-                  pi= list.buscarAluno(sorteados, ra);
-                  piloto.setText(pi.getNomeA());
-                  if(p.isEmpty() == false){
-                     ra1=p.pop();
-                     co= list.buscarAluno(sorteados, ra1);
-                     copiloto.setText(co.getNomeA());
-                  }
+                  escolherA.setText("sorteio");
+                  p= list.listaSorteio(sorteados);
                }else{
-                  JOptionPane.showMessageDialog(null,"Todos os Alunos já participaram");
+                  day=(dd.getSelectedItem() + "/" + mm.getSelectedItem() + "/" + ano.getText());
+                  String ra,ra1;
+                  if(p.isEmpty() == false){
+                     ra=p.pop();
+                     pi= list.buscarAluno(sorteados, ra);
+                     piloto.setText(pi.getNomeA());
+                     if(p.isEmpty() == false){
+                        ra1=p.pop();
+                        co= list.buscarAluno(sorteados, ra1);
+                        copiloto.setText(co.getNomeA());
+                     }
+                  }else{
+                     JOptionPane.showMessageDialog(null,"Todos os Alunos já participaram");
+                  }
+                  
+                  
                }
                
+            }
+            if(f.getSource() == atribuirP){
+               double verificP=0;
+               boolean veriP= true ;
+               try{
+                 verificP = Double.parseDouble(notaP.getText());
+               }catch(Exception e){
+                   veriP = false;
+               }
+               if(veriP== true && verificP<=10 && verificP>=0 ){
+                  double j= Double.parseDouble(notaP.getText());
+                  String pp= (String) presenca.getSelectedItem();
+                  if(pp.compareTo("Presente")==0){
+                     pp="P";
+                  }else{
+                     pp="F";
+                  }
+                  Nota nn = new Nota(j,day,pp);
+                  String rr = pi.getMatriculaA();
+                  atribuindo.addNota(nn,rr);
+               }else{
+                  JOptionPane.showMessageDialog(null,"Ajuste a nota");
+               }   
+            }
+            if(f.getSource() == atribuirC){
+               double verificC=0;
+               boolean veriC= true ;
+               try{
+                 verificC = Double.parseDouble(notaC.getText());
+               }catch(Exception e){
+                   veriC = false;
+               }
+               if(veriC== true && verificC<=10 && verificC>=0 ){
                
+                  double j= Double.parseDouble(notaC.getText());
+                  String pp= (String) presenca1.getSelectedItem();
+                  if(pp.compareTo("Presente")==0){
+                     pp="P";
+                  }else{
+                     pp="F";
+                  }
+                  Nota nn = new Nota(j,day,pp);
+                  String rr = co.getMatriculaA();
+                  atribuindo.addNota(nn,rr); 
+               }else{
+                  JOptionPane.showMessageDialog(null,"Ajuste a nota");
+               }             
+            }  
+            if(f.getSource() == voltar){
+               //encerra a aula de dojo caso não de tempo de mais alunos responderem
+               new TelaMenu();
+               dispose(); 
+               if(p.isEmpty()== false){
+                  String pp="P";
+                  double j=10;
+                  do{
+                     String ra=p.pop();
+                     Nota nn= new Nota(j,day,pp);
+                     atribuindo.addNota(nn,ra);
+                  }while(p.isEmpty()== false);
+   
+               }
+                new TelaMenu();
+                dispose(); 
             }
-            
+         }else{
+            JOptionPane.showMessageDialog(null ,"ajuste a data primeiro");
          }
-         if(f.getSource() == atribuirP){
-            double j= Double.parseDouble(notaP.getText());
-            String pp= (String) presenca.getSelectedItem();
-            if(pp.compareTo("Presente")==0){
-               pp="P";
-            }else{
-               pp="F";
-            }
-            Nota nn = new Nota(j,day,pp);
-            String rr = pi.getMatriculaA();
-            atribuindo.addNota(nn,rr);
-         }
-         if(f.getSource() == atribuirC){
-            double j= Double.parseDouble(notaC.getText());
-            String pp= (String) presenca1.getSelectedItem();
-            if(pp.compareTo("Presente")==0){
-               pp="P";
-            }else{
-               pp="F";
-            }
-            Nota nn = new Nota(j,day,pp);
-            String rr = co.getMatriculaA();
-            atribuindo.addNota(nn,rr);            
-         }
-         if(f.getSource() == voltar){
-            //encerra a aula de dojo caso não de tempo de mais alunos responderem
-            new TelaMenu();
-            dispose(); 
-            if(p.isEmpty()== false){
-               String pp="P";
-               double j=10;
-               do{
-                  String ra=p.pop();
-                  Nota nn= new Nota(j,day,pp);
-                  atribuindo.addNota(nn,ra);
-               }while(p.isEmpty()== false);
-
-            }
-             new TelaMenu();
-             dispose(); 
-         }
-
       }
 
 

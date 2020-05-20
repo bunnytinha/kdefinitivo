@@ -105,6 +105,8 @@ public class ListaDeAluno extends JFrame implements ActionListener, ItemListener
          Dimension d = tk.getScreenSize();
          telaW= d.width;
          telaH= d.height;
+         //telaW = 1600;
+         //telaH = 900;
          centroW = telaW/2;
          centroH = telaH/2;
          
@@ -176,11 +178,12 @@ public class ListaDeAluno extends JFrame implements ActionListener, ItemListener
          alter.setBounds(centroW+50,centroH+30,150,20);
          container.setBounds(centroW-310,centroH+100,300,200); 
          container1.setBounds(centroW+10,centroH+100,300,200);
-         voltar.setBounds(centroW-150,centroH+400,300,100);
-         lbvoltar.setBounds(centroW-250,centroH+400,300,100);
+         voltar.setBounds(centroW-150,centroH+330,300,100);
+         lbvoltar.setBounds(centroW-250,centroH+330,300,100);
          bg.setBounds(0,0,telaW,telaH);
-         bannerK.setBounds(centroW-1050,centroH-570,700,300);
-         bannerM.setBounds(centroW+400,centroH-570,700,300);
+         bannerK.setBounds(centroW-900,centroH-500,700,300);
+         bannerM.setBounds(centroW+200,centroH-500,700,300);
+         
          
          //listener nos botões   
          alterar.addActionListener(this);        
@@ -386,9 +389,12 @@ public class ListaDeAluno extends JFrame implements ActionListener, ItemListener
             alunos = (String) filtro.getSelectedItem();
             conteudo= indicaAlunos();
             remove(container);
+            remove(bg);
             container = criaTabela();
+            container.setBounds(centroW-310,centroH+100,300,200);
             add(container);
-            container.setBounds(centroW-310,centroH,300,200);
+            bg.setBounds(0,0,telaW,telaH);
+            add(bg);
             repaint();
               
          }

@@ -152,8 +152,8 @@ public class CadastroAluno extends JFrame implements ActionListener, ItemListene
          voltar.setBounds(centroW-150,centroH+260,300,100);
          lbvoltar.setBounds(centroW-250,centroH+260,300,100);
          bg.setBounds(0,0,telaW,telaH);
-         bannerK.setBounds(centroW-1050,centroH-570,700,300);
-         bannerM.setBounds(centroW+400,centroH-570,700,300);
+         bannerK.setBounds(centroW-900,centroH-500,700,300);
+         bannerM.setBounds(centroW+280,centroH-500,700,300);
          
          
          //listener nos botões   
@@ -246,30 +246,36 @@ public class CadastroAluno extends JFrame implements ActionListener, ItemListene
             n=nome.getText();
             r=ra.getText();
             e=email.getText();
-            
-            Aluno aluno= new Aluno("","","","");
-            aluno.setNomeA(n);
-            aluno.setMatriculaA(r);
-            aluno.setEmailA(e);
-            aluno.setTurmaA(t);
-            
-            ListaAlunos adicionando= new ListaAlunos();
-            adicionando.addAluno(aluno);
-            
-            alunos = (String) filtro.getSelectedItem();
-            conteudo= indicaAlunos();
-             
-            remove(container);
-            remove(bg);
-            conteudo= indicaAlunos();            
-            container = criaTabela();                    
-            container.setBounds(centroW-300,centroH+40,600,200);
-            bg.setBounds(0,0,telaW,telaH);
-            add(container);
-            add(bg);
-            validate();            
-            repaint();  
-            
+            int nx,rx,ex;
+            nx=n.compareTo("");
+            rx=r.compareTo("");
+            ex=e.compareTo("");
+            if(nx!=0 && rx!=0 && ex!=0){
+               Aluno aluno= new Aluno("","","","");
+               aluno.setNomeA(n);
+               aluno.setMatriculaA(r);
+               aluno.setEmailA(e);
+               aluno.setTurmaA(t);
+               
+               ListaAlunos adicionando= new ListaAlunos();
+               adicionando.addAluno(aluno);
+               
+               alunos = (String) filtro.getSelectedItem();
+               conteudo= indicaAlunos();
+                
+               remove(container);
+               remove(bg);
+               conteudo= indicaAlunos();            
+               container = criaTabela();                    
+               container.setBounds(centroW-300,centroH+40,600,200);
+               bg.setBounds(0,0,telaW,telaH);
+               add(container);
+               add(bg);
+               validate();            
+               repaint();  
+            }else{
+               JOptionPane.showMessageDialog(null,"campo não preenchido");
+            }
          }else if(c.getSource() == voltar){
             new TelaAlunos();
             dispose();

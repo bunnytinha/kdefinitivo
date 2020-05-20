@@ -1,10 +1,3 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.net.URL;
-import javax.swing.SwingUtilities;
-import javax.swing.JFrame;
-import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -41,7 +34,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 //cria a classe com indicação de JFrame e ActionListener
-public class TelaMenu extends JFrame implements ActionListener{
+public class TelaMenuTeste extends JFrame implements ActionListener{
 
    private Container painelDeConteudo;   //tem que criar container
 
@@ -64,7 +57,7 @@ public class TelaMenu extends JFrame implements ActionListener{
    private ImageIcon bn = new ImageIcon("../Imagens/bannerkd.png");
    private JLabel bannerK = new JLabel(bn);
 
-   public TelaMenu(){
+   public TelaMenuTeste(){
    
       super ("Kime Dachi - Menu");
          
@@ -82,7 +75,7 @@ public class TelaMenu extends JFrame implements ActionListener{
       int centroH = telaH/2;
          
       //define a posição e tamanho dos itens (posição horizontal,posição vertical,tamanho horizontal, tamanho vertical)
-      bg.setBounds(0,0,telaW,telaH);
+      //bg.setBounds(0,0,telaW,telaH);
       alunos.setBounds(centroW-100,centroH-200,200,100);
       lbalunos.setBounds(centroW-220,centroH-200,100,100);
       perguntas.setBounds(centroW-100,centroH-100,200,100);
@@ -90,7 +83,7 @@ public class TelaMenu extends JFrame implements ActionListener{
       dojo.setBounds(centroW-100,centroH,200,100);
       lbdojo.setBounds(centroW-220,centroH,100,100);
       bannerK.setBounds(centroW-900,centroH-500,700,300);
-      bannerM.setBounds(centroW+280,centroH-500,700,300);
+      bannerM.setBounds(centroW+295,centroH-500,700,300);
       
       //estio dos botoes
       alunos.setFont(new Font("BEBAS", Font.PLAIN, 42));
@@ -127,12 +120,13 @@ public class TelaMenu extends JFrame implements ActionListener{
       painelDeConteudo.add(bannerK);
       painelDeConteudo.add(bannerM);
       painelDeConteudo.add(bg);
+      //add(bg, BorderLayout.CENTER);
 
       //arruma tamanho layout e visibilidade do frame
       setSize(telaW,telaH);//tela do tamanho da tela do usuario
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//fecha a aplicacao
       setExtendedState(JFrame.MAXIMIZED_BOTH);//tela cheia
-      setLayout(null);
+      setLayout(new BoxLayout(painelDeConteudo,BoxLayout.Y_AXIS));
       setVisible(true);//visivel    
          
    }

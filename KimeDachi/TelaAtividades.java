@@ -63,6 +63,8 @@ public class TelaAtividades extends JFrame implements ActionListener{
       Dimension d = tk.getScreenSize();
       int telaW= d.width;
       int telaH= d.height;
+      //int telaW = 1600;
+      //int telaH = 900;
       int centroW = telaW/2;
       int centroH = telaH/2;
          
@@ -74,8 +76,9 @@ public class TelaAtividades extends JFrame implements ActionListener{
       lbperguntas.setBounds(centroW-230,centroH-100,100,100);
       voltar.setBounds(centroW-250,centroH+100,500,100);
       lbvoltar.setBounds(centroW-230,centroH+100,100,100);
-      bannerK.setBounds(centroW-1050,centroH-570,700,300);
-      bannerM.setBounds(centroW+350,centroH-570,700,300);
+      bannerK.setBounds(centroW-900,centroH-500,700,300);
+      bannerM.setBounds(centroW+200,centroH-500,700,300);
+         
       
       //estio dos botoes
       atividades.setFont(new Font("BEBAS", Font.PLAIN, 42));

@@ -38,10 +38,10 @@ public class BancoDePerguntas extends JFrame implements ActionListener, ListSele
 
       //variaveis privadas 
       private Container painelDeConteudo;
-      private JTextField perguntaT= new JTextField("");
-      private JTextField respostaT= new JTextField("");
+      private JTextArea perguntaT= new JTextArea("");
+      private JTextArea respostaT= new JTextArea("");
       private JTextField temaT= new JTextField("");
-      private JTextField idT= new JTextField("pergunta em 2 palavras ou menos");
+      private JTextField idT= new JTextField("");
       private JLabel pergunta= new JLabel("pergunta:");
       private JLabel resposta= new JLabel("resposta:");
       private JLabel tema= new JLabel("tema:");
@@ -136,7 +136,8 @@ public class BancoDePerguntas extends JFrame implements ActionListener, ListSele
          pp = new JScrollPane(perguntaT);
          rr = new JScrollPane(respostaT);
 
-         
+         perguntaT.setLineWrap(true);
+         respostaT.setLineWrap(true);
          
          //posicionamento das coisas   
          
@@ -154,9 +155,8 @@ public class BancoDePerguntas extends JFrame implements ActionListener, ListSele
          voltar.setBounds(centroW-100,centroH+360,200,100);
          lbvoltar.setBounds(centroW-200,centroH+360,200,100);
          bg.setBounds(0,0,telaW,telaH);
-         bannerK.setBounds(centroW-1050,centroH-570,700,300);
-         bannerM.setBounds(centroW+350,centroH-570,700,300);
-         
+         bannerK.setBounds(centroW-900,centroH-500,700,300);
+         bannerM.setBounds(centroW+280,centroH-500,700,300);
          
          //listener nos botões   
          alterar.addActionListener(this);        

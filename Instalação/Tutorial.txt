@@ -1,0 +1,11 @@
+Caso o .jar não funcione, execute os seguintes passos:
+
+- Tenha uma IDE para JAVA instalada (no caso, uso jGRASP);
+- Tenha o Workbench instalado;
+- Acesse a pasta "Fonte" e instale a fonte que está nela;
+- Acesse o diretório Dojo>Kime Dachi, abra o arquivo PI.sql e execute-o;
+- Ainda dentro do caminho Dojo>Kime Dachi>TelaAcesso.java;
+- Abra o TelaAcesso.java usando uma IDE para JAVA;
+- Entre com o seguinte usuário: 88888888 e senha: SENHA;
+
+Pronto, assim você irá conseguir acessar o Kime Dachi!

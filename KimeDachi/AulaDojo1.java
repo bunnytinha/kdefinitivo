@@ -40,7 +40,7 @@ public class AulaDojo extends JFrame implements ActionListener, ItemListener{
       private JLabel data= new JLabel("DATA");
       private JLabel tema = new JLabel("TEMA");
       private JLabel atividade = new JLabel("ATIVIDADE");
-      private JButton voltar =new JButton("SALVAR E VOLTAR");
+      private JButton voltar =new JButton("VOLTAR");
       private JButton conferirP= new JButton("CONFERIR");
       private JButton escolherA= new JButton("CHAMADA"); 
       private JButton atribuirP = new JButton("ATRIBUIR");
@@ -185,7 +185,7 @@ public class AulaDojo extends JFrame implements ActionListener, ItemListener{
             presenca.setBounds(centroW+50,centroH+85,100,24);
             notaC.setBounds(centroW-80, centroH+85,100,25);
             atribuirC.setBounds(centroW+110,centroH+85,200,25);
-            voltar.setBounds(centroW-100,centroH+165,230,30);
+            voltar.setBounds(centroW-100,centroH+165,200,30);
             lbvoltar.setBounds(centroW-200,centroH+165,200,30);
             filtro.setBounds(centroW-100,centroH-45,200,20);
             bg.setBounds(0,0,telaW,telaH);
